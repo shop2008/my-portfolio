@@ -86,7 +86,7 @@ export default function ChatbotButton() {
     <>
       <button
         onClick={toggleChat}
-        className="fixed bottom-5 right-5 bg-purple-600 text-white p-3 rounded-full shadow-lg hover:bg-purple-700 transition-colors z-50"
+        className="fixed bottom-5 right-5 bg-pink-600 text-white p-3 rounded-full shadow-lg hover:bg-pink-700 transition-colors z-50"
         aria-label="Open chat"
       >
         <FaComments size={24} />
@@ -100,7 +100,7 @@ export default function ChatbotButton() {
             exit={{ opacity: 0, y: 50 }}
             className="fixed bottom-20 right-5 w-96 h-[28rem] bg-gray-100 rounded-lg shadow-xl overflow-hidden z-50"
           >
-            <div className="bg-purple-600 text-white p-4 flex justify-between items-center">
+            <div className="bg-pink-600 text-white p-4 flex justify-between items-center">
               <h3 className="font-semibold">Chat with Gigi&apos;s Bot</h3>
               <button
                 onClick={toggleChat}
@@ -119,19 +119,19 @@ export default function ChatbotButton() {
                   }`}
                 >
                   {message.sender === "bot" && (
-                    <FaRobot className="text-purple-600 mr-2 mt-1" />
+                    <FaRobot className="text-pink-600 mr-2 mt-1" />
                   )}
                   <div
                     className={`max-w-[70%] p-3 rounded-lg ${
                       message.sender === "user"
-                        ? "bg-purple-600 text-white"
+                        ? "bg-pink-600 text-white"
                         : "bg-gray-200 text-gray-800"
                     }`}
                   >
                     {message.text}
                   </div>
                   {message.sender === "user" && (
-                    <FaUser className="text-purple-600 ml-2 mt-1" />
+                    <FaUser className="text-pink-600 ml-2 mt-1" />
                   )}
                 </div>
               ))}
@@ -145,11 +145,11 @@ export default function ChatbotButton() {
                   onChange={handleInputChange}
                   onKeyPress={handleKeyPress}
                   placeholder="Type your message..."
-                  className="flex-grow p-2 rounded-l border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-600 text-black"
+                  className="flex-grow p-2 rounded-l border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-600 text-black"
                 />
                 <button
                   onClick={handleSendMessage}
-                  className="bg-purple-600 text-white p-2 rounded-r hover:bg-purple-700 transition-colors ml-2"
+                  className="bg-pink-600 text-white p-2 rounded-r hover:bg-pink-700 transition-colors ml-2"
                   aria-label="Send message"
                 >
                   <FaPaperPlane />

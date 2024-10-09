@@ -48,27 +48,30 @@ export default function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 bg-gradient-to-br from-gray-900 to-transparent transition-transform duration-300 z-50 ${
+      className={`fixed top-0 left-0 right-0 backdrop-blur-md transition-transform duration-300 z-50 ${
         isVisible ? "translate-y-0 animate-fade-in" : "-translate-y-full"
       }`}
     >
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center py-4">
-          <a href="#" className="text-2xl font-bold text-purple-400">
+          <a
+            href="#"
+            className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary"
+          >
             GiGiTech
           </a>
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-purple-400 focus:outline-none"
+              className="text-text focus:outline-none"
             >
               {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
             </button>
           </div>
           <ul
-            className={`flex-col md:flex-row md:flex absolute md:static bg-gray-900 md:bg-transparent w-full md:w-auto left-0 top-16 md:top-0 transition-transform duration-300 ${
-              isMenuOpen ? "flex flex-col items-center" : "hidden"
-            } md:space-y-0`}
+            className={`flex-col md:flex-row md:flex absolute md:static bg-background/90 md:bg-transparent w-full md:w-auto left-0 top-16 md:top-0 transition-all duration-300 ${
+              isMenuOpen ? "flex flex-col items-center py-4" : "hidden"
+            } md:space-y-0 md:space-x-5`}
           >
             {["About", "Experience", "Projects", "Skills", "Contact"].map(
               (item) => (
@@ -76,9 +79,9 @@ export default function Navigation() {
                   <button
                     onClick={() => {
                       scrollToSection(item.toLowerCase());
-                      setIsMenuOpen(false); // Close menu on item click
+                      setIsMenuOpen(false);
                     }}
-                    className="block py-2 md:py-0 cursor-pointer hover:text-purple-400 transition-colors"
+                    className="block py-2 md:py-0 cursor-pointer text-text hover:text-primary transition-colors"
                   >
                     {item}
                   </button>
