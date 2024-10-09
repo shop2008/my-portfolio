@@ -3,25 +3,25 @@ import ProjectCard from "./ProjectCard";
 
 const projects = [
   {
-    title: "Movie Recommendation App",
+    title: "Movie Maestro",
     description:
       "A React-based app with Firebase backend, using Gemini API for personalized movie suggestions.",
     image: "/project2.jpg",
     link: "https://github.com/shop2008/movie-recommendation-app",
   },
   {
-    title: "Flutter Shop Cupertino",
+    title: "Cupertino Shop",
     description:
       "A cross-platform shopping app using Flutter with Cupertino widgets for an iOS-like experience.",
     image: "/project1.jpg",
     link: "https://github.com/shop2008/flutter_shop_cupertino",
   },
   {
-    title: "Little Lemon",
+    title: "DaoDao",
     description:
-      "A Django-based web application for a restaurant, showcasing menu items and reservations.",
-    image: "/little-lemon.jpg",
-    link: "https://github.com/shop2008/littleLemon",
+      "An Android native instant messaging app with real-time voice calls, featuring secure communication and a user-friendly interface.",
+    image: "/project3.jpg",
+    link: "https://github.com/shop2008/#",
   },
 ];
 

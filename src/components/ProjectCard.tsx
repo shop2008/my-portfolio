@@ -29,7 +29,7 @@ export default function ProjectCard({
         alt={title}
         width={500}
         height={300}
-        className="w-full h-48 object-cover"
+        className="w-full h-48 object-contain"
         loading="lazy"
       />
       <div className="p-6">
