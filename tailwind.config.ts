@@ -15,27 +15,21 @@ const config: Config = {
         text: "#F3F4F6",
         accent: "#8B5CF6",
       },
-      keyframes: {
-        "fade-in": {
-          "0%": { opacity: "0" },
-          "100%": { opacity: "1" },
-        },
-        "slide-up": {
-          "0%": { transform: "translateY(100%)", opacity: "0" },
-          "100%": { transform: "translateY(0)", opacity: "1" },
-        },
-        pulse: {
-          "0%, 100%": { opacity: "1" },
-          "50%": { opacity: "0.5" },
-        },
+      fontFamily: {
+        heading: ["Space Grotesk", "sans-serif"],
+        body: ["DM Sans", "sans-serif"],
       },
-      animation: {
-        "fade-in": "fade-in 1s ease-out",
-        "slide-up": "slide-up 0.5s ease-out",
-        pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+      fontSize: {
+        "heading-1": ["3.5rem", { lineHeight: "1.2", fontWeight: "700" }],
+        "heading-2": ["2.5rem", { lineHeight: "1.3", fontWeight: "600" }],
+        "heading-3": ["2rem", { lineHeight: "1.4", fontWeight: "600" }],
+        "body-large": ["1.25rem", { lineHeight: "1.6", fontWeight: "400" }],
+        "body-normal": ["1rem", { lineHeight: "1.6", fontWeight: "400" }],
       },
+      // ... keep existing keyframes and animations
     },
   },
   plugins: [],
 };
+
 export default config;

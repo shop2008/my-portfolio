@@ -5,7 +5,7 @@ export default function Contact() {
   return (
     <footer id="contact" className="py-10">
       <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-3xl font-semibold mb-6 text-primary">
+        <h2 className="text-heading-2 font-semibold mb-6 text-primary">
           Get in Touch
         </h2>
         <div className="flex space-x-6">

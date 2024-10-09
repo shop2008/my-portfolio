@@ -11,7 +11,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-primary"
+          className="text-heading-1 mb-6 text-primary"
         >
           Hi, I&apos;m Gigi Wang
         </motion.h1>
@@ -21,7 +21,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-8"
         >
-          <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-secondary">
+          <p className="text-heading-3 font-semibold text-secondary">
             Web Developer | Mobile Developer | Fullstack Developer
           </p>
         </motion.div>
@@ -29,7 +29,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-lg sm:text-xl text-text max-w-2xl mx-auto mb-12"
+          className="text-body-large text-text max-w-2xl mx-auto mb-12"
         >
           Crafting innovative digital solutions with cutting-edge technologies
         </motion.p>
@@ -41,13 +41,13 @@ export default function Hero() {
         >
           <a
             href="#projects"
-            className="bg-primary text-background px-8 py-3 rounded-full text-lg font-semibold hover:bg-secondary transition-colors"
+            className="bg-primary text-background px-8 py-3 rounded-full text-body-normal font-semibold hover:bg-secondary transition-colors"
           >
             View My Projects
           </a>
           <a
             href="#contact"
-            className="bg-transparent border-2 border-primary text-primary px-8 py-3 rounded-full text-lg font-semibold hover:bg-primary hover:text-background transition-colors"
+            className="bg-transparent border-2 border-primary text-primary px-8 py-3 rounded-full text-body-normal font-semibold hover:bg-primary hover:text-background transition-colors"
           >
             Get in Touch
           </a>

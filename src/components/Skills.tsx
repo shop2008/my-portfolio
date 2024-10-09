@@ -5,16 +5,23 @@ export default function Skills() {
     "Android",
     "iOS",
     "Flutter",
-    "Java",
     "React",
+    "Next.js",
     "Node.js",
     "MongoDB",
     "MySQL",
+    "Tailwind CSS",
+    "Bootstrap",
+    "Git",
+    "CI/CD",
+    "AWS",
+    "Azure",
+    "Firebase",
   ];
 
   return (
     <section id="skills" className="max-w-4xl mx-auto px-4 py-20">
-      <h2 className="text-3xl font-semibold mb-6 text-primary">Skills</h2>
+      <h2 className="text-heading-2 font-semibold mb-6 text-primary">Skills</h2>
       <div className="flex flex-wrap gap-4">
         {skills.map((skill) => (
           <span

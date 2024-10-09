@@ -1,12 +1,14 @@
 import React from "react";
+import dynamic from "next/dynamic";
 import Navigation from "../components/Navigation";
 import Hero from "../components/Hero";
 import About from "../components/About";
 import Experience from "../components/Experience";
 import Projects from "../components/Projects";
-import Skills from "../components/Skills";
 import Contact from "../components/Contact";
 import ChatbotButton from "../components/ChatbotButton";
+
+const Skills = dynamic(() => import("../components/Skills"), { ssr: false });
 
 export default function Home() {
   return (
