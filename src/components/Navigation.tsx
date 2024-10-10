@@ -51,12 +51,15 @@ export default function Navigation() {
       className={`fixed top-0 left-0 right-0 backdrop-blur-md transition-transform duration-300 z-50 ${
         isVisible ? "translate-y-0 animate-fade-in" : "-translate-y-full"
       }`}
+      role="navigation"
+      aria-label="Main navigation"
     >
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           <a
             href="#"
             className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary"
+            aria-label="GiGiTech home"
           >
             GiGiTech
           </a>
@@ -64,24 +67,30 @@ export default function Navigation() {
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-text focus:outline-none"
+              aria-expanded={isMenuOpen}
+              aria-controls="main-menu"
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             >
               {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
             </button>
           </div>
           <ul
+            id="main-menu"
             className={`flex-col md:flex-row md:flex absolute md:static bg-background/90 md:bg-transparent w-full md:w-auto left-0 top-16 md:top-0 transition-all duration-300 ${
               isMenuOpen ? "flex flex-col items-center py-4" : "hidden"
             } md:space-y-0 md:space-x-5`}
+            role="menu"
           >
             {["About", "Experience", "Projects", "Skills", "Contact"].map(
               (item) => (
-                <li key={item} className="text-center md:text-left">
+                <li key={item} className="text-center md:text-left" role="none">
                   <button
                     onClick={() => {
                       scrollToSection(item.toLowerCase());
                       setIsMenuOpen(false);
                     }}
                     className="block py-2 md:py-0 cursor-pointer text-text hover:text-primary transition-colors"
+                    role="menuitem"
                   >
                     {item}
                   </button>

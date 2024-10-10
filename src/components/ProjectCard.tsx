@@ -26,7 +26,7 @@ export default function ProjectCard({
     >
       <Image
         src={image}
-        alt={title}
+        alt={`${title} - Project Screenshot`}
         width={500}
         height={300}
         className="w-full h-48 object-contain"

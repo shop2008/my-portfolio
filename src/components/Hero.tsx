@@ -5,13 +5,17 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
+    <section
+      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8"
+      aria-labelledby="hero-heading"
+    >
       <div className="max-w-4xl mx-auto text-center">
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-heading-1 mb-6 text-primary"
+          id="hero-heading"
         >
           Hi, I&apos;m Gigi Wang
         </motion.h1>
@@ -41,13 +45,15 @@ export default function Hero() {
         >
           <a
             href="#projects"
-            className="bg-primary text-background px-8 py-3 rounded-full text-body-normal font-semibold hover:bg-secondary transition-colors"
+            className="bg-primary text-background px-8 py-3 rounded-full text-body-normal font-semibold hover:bg-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+            aria-label="View My Projects"
           >
             View My Projects
           </a>
           <a
             href="#contact"
-            className="bg-transparent border-2 border-primary text-primary px-8 py-3 rounded-full text-body-normal font-semibold hover:bg-primary hover:text-background transition-colors"
+            className="bg-transparent border-2 border-primary text-primary px-8 py-3 rounded-full text-body-normal font-semibold hover:bg-primary hover:text-background transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+            aria-label="Get in Touch"
           >
             Get in Touch
           </a>
