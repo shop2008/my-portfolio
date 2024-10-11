@@ -17,8 +17,8 @@ export default function Home() {
       <Hero />
       <div className="max-w-6xl mx-auto px-4 space-y-24">
         <About />
-        <Experience />
         <Projects />
+        <Experience />
         <Skills />
       </div>
       <Contact />
