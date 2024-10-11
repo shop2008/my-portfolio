@@ -17,6 +17,7 @@ const spaceMono = Space_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.gigitech.me"),
   title: "GiGiTech - Full Stack & Mobile Developer Portfolio | Gigi Wang",
   description:
     "Explore Gigi Wang's portfolio showcasing expertise in full stack, mobile, and web development. View projects, skills, and experience.",
