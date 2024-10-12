@@ -18,6 +18,7 @@ const projects = [
       </>
     ),
     image: "/project2.jpg",
+    phoneImage: "/movie-maestro-phone.jpg",
     link: "https://movierecommender-b4395.web.app",
     githubLink: "https://github.com/shop2008/movie-recommendation-app",
     technologies: ["React", "Firebase", "Gemini API"],
@@ -36,7 +37,8 @@ const projects = [
         galleries, and volunteer sign-up forms.{" "}
       </>
     ),
-    image: "/future-seeds.jpg", // You'll need to add this image to your public folder
+    image: "/future-seeds.jpg",
+    phoneImage: "/future-seeds-phone.jpg",
     link: "https://shop2008.github.io/future-seeds/index.html",
     githubLink: "https://github.com/shop2008/future-seeds",
     technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
@@ -47,6 +49,7 @@ const projects = [
     description:
       "A cross-platform shopping app using Flutter with Cupertino widgets for an iOS-like experience.",
     image: "/project1.jpg",
+    phoneImage: "/project1.jpg",
     link: "https://github.com/shop2008/flutter_shop_cupertino",
     githubLink: "https://github.com/shop2008/flutter_shop_cupertino",
     technologies: ["Flutter", "Cupertino", "Firebase"],
@@ -57,6 +60,7 @@ const projects = [
     description:
       "An Android native instant messaging app with real-time voice calls, featuring secure communication and a user-friendly interface.",
     image: "/project3.jpg",
+    phoneImage: "/daodao-phone.jpg",
     link: "https://github.com/shop2008/#",
     githubLink: "https://github.com/shop2008/#",
     technologies: ["Android", "Kotlin", "Agora", "Singnal"],
@@ -77,6 +81,7 @@ export default function Projects() {
             title={project.title}
             description={project.description as string}
             image={project.image}
+            phoneImage={project.phoneImage}
             link={project.link}
             githubLink={project.githubLink}
             technologies={project.technologies}

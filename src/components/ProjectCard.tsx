@@ -8,6 +8,7 @@ interface ProjectCardProps {
   title: string;
   description: string;
   image: string;
+  phoneImage?: string;
   link: string;
   githubLink: string;
   technologies: string[];
@@ -18,6 +19,7 @@ export default function ProjectCard({
   title,
   description,
   image,
+  phoneImage,
   link,
   githubLink,
   technologies,
@@ -28,25 +30,76 @@ export default function ProjectCard({
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="flex flex-col md:flex-row justify-between items-center relative"
+      className="flex flex-col md:flex-row justify-between items-center relative py-10"
     >
-      <motion.div
-        whileHover={{ scale: 1.05 }}
-        className="relative w-full md:w-1/2 aspect-video md:aspect-auto md:h-96"
-      >
-        <Image
-          src={image}
-          alt={`${title} - Project Screenshot`}
-          layout="fill"
-          style={{ objectFit: "cover" }}
-          className="rounded-lg"
-        />
-      </motion.div>
+      <div className="relative w-full md:w-1/2 aspect-video md:aspect-auto md:h-96">
+        <motion.div
+          transition={{ duration: 0.3, delay: 0.1 }}
+          whileHover={{ y: -10 }}
+          className="relative w-full h-full"
+        >
+          <Image
+            src={image}
+            alt={`${title} - Project Screenshot`}
+            fill
+            style={{ objectFit: "cover" }}
+          />
+        </motion.div>
+        {phoneImage && (
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
+            whileHover={{ y: -10 }}
+            className="absolute -bottom-16 -left-16 w-40 h-80"
+          >
+            <svg
+              className="w-full h-full"
+              viewBox="0 0 320 640"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="0"
+                y="0"
+                width="320"
+                height="640"
+                rx="40"
+                fill="#FFFFFF"
+              />
+              <rect
+                x="8"
+                y="8"
+                width="304"
+                height="624"
+                rx="32"
+                fill="#F2F2F2"
+              />
+            </svg>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3, delay: 0.2 }}
+              className="absolute inset-2 rounded-[16px] overflow-hidden"
+            >
+              <Image
+                src={phoneImage}
+                alt={`${title} - Phone View`}
+                fill
+                style={{
+                  objectFit: "cover",
+                  objectPosition: "top",
+                }}
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </div>
       <motion.div
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="w-full md:w-3/5 flex flex-col justify-between md:absolute md:right-0 md:bottom-0"
+        className="w-full md:w-7/12 flex flex-col justify-between md:absolute md:right-0 md:bottom-0"
       >
         <h3 className="text-primary text-sm text-right">{category}</h3>
         <h3 className="text-2xl font-semibold text-white mt-2 text-right">
