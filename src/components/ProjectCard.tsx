@@ -46,7 +46,7 @@ export default function ProjectCard({
             src={image}
             alt={`${title} - Project Screenshot`}
             fill
-            style={{ objectFit: "cover" }}
+            style={{ objectFit: "cover", objectPosition: "center" }}
             className="rounded-lg"
           />
         </motion.div>

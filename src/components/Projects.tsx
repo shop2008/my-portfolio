@@ -17,7 +17,7 @@ const projects = [
         backend.
       </>
     ),
-    image: "/project2.jpg",
+    image: "/movie-maestro.jpg",
     phoneImage: "/movie-maestro-phone.jpg",
     link: "https://movierecommender-b4395.web.app",
     githubLink: "https://github.com/shop2008/movie-recommendation-app",
@@ -48,8 +48,8 @@ const projects = [
     title: "Cupertino Shop",
     description:
       "A cross-platform shopping app using Flutter with Cupertino widgets for an iOS-like experience.",
-    image: "/project1.jpg",
-    phoneImage: "/project1.jpg",
+    image: "/cupertino-store.jpg",
+    phoneImage: "/cupertino-store-phone.jpg",
     link: "https://github.com/shop2008/flutter_shop_cupertino",
     githubLink: "https://github.com/shop2008/flutter_shop_cupertino",
     technologies: ["Flutter", "Cupertino", "Firebase"],
@@ -59,7 +59,7 @@ const projects = [
     title: "DaoDao",
     description:
       "An Android native instant messaging app with real-time voice calls, featuring secure communication and a user-friendly interface.",
-    image: "/project3.jpg",
+    image: "/daodao.jpg",
     phoneImage: "/daodao-phone.jpg",
     link: "https://github.com/shop2008/#",
     githubLink: "https://github.com/shop2008/#",
