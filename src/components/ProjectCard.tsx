@@ -30,9 +30,9 @@ export default function ProjectCard({
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="flex flex-col md:flex-row justify-between items-center relative py-10"
+      className="flex flex-col md:flex-row justify-between items-center relative py-10 px-4 md:px-0"
     >
-      <div className="relative w-full md:w-1/2 aspect-video md:aspect-auto md:h-96">
+      <div className="relative w-full md:w-1/2 aspect-video md:aspect-auto md:h-96 mb-8 md:mb-0">
         <motion.div
           transition={{ duration: 0.3, delay: 0.1 }}
           whileHover={{ y: -10 }}
@@ -43,6 +43,7 @@ export default function ProjectCard({
             alt={`${title} - Project Screenshot`}
             fill
             style={{ objectFit: "cover" }}
+            className="rounded-lg"
           />
         </motion.div>
         {phoneImage && (
@@ -51,7 +52,7 @@ export default function ProjectCard({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: 0.1 }}
             whileHover={{ y: -10 }}
-            className="absolute -bottom-16 -left-16 w-40 h-80"
+            className="absolute -bottom-16 -left-8 md:-left-16 w-32 md:w-40 h-64 md:h-80"
           >
             <svg
               className="w-full h-full"
@@ -102,7 +103,7 @@ export default function ProjectCard({
         className="w-full md:w-7/12 flex flex-col justify-between md:absolute md:right-0 md:bottom-0"
       >
         <h3 className="text-primary text-sm text-right">{category}</h3>
-        <h3 className="text-2xl font-semibold text-white mt-2 text-right">
+        <h3 className="text-xl md:text-2xl font-semibold text-white mt-2 text-right">
           {title}
         </h3>
         <motion.p
@@ -110,16 +111,16 @@ export default function ProjectCard({
             boxShadow: "0 0 10px 0px rgba(255, 105, 180, 0.3)",
             transition: { duration: 0.3 },
           }}
-          className="bg-gray-800 rounded-lg text-gray-300 mt-4 p-6"
+          className="bg-gray-800 rounded-lg text-gray-300 mt-4 p-4 md:p-6 text-sm md:text-base"
         >
           {description}
         </motion.p>
-        <div className="flex flex-wrap gap-2 my-4 justify-end">
+        <div className="flex flex-wrap gap-2 my-4 justify-start md:justify-end">
           {technologies.map((tech, index) => (
             <motion.span
               key={index}
               whileHover={{ scale: 1.1 }}
-              className="bg-gray-700 text-primary px-3 py-1 rounded-full text-sm"
+              className="bg-gray-700 text-primary px-2 md:px-3 py-1 rounded-full text-xs md:text-sm"
             >
               {tech}
             </motion.span>
