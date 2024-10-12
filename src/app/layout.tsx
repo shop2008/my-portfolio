@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Orbitron, Space_Mono } from "next/font/google";
 import "./globals.css";
 import StructuredData from "../components/StructuredData";
+import { Analytics } from "@vercel/analytics/react";
 
 const orbitron = Orbitron({
   subsets: ["latin"],
@@ -56,7 +57,10 @@ export default function RootLayout({
       <head>
         <StructuredData />
       </head>
-      <body className="font-mono">{children}</body>
+      <body className="font-mono">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
