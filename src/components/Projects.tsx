@@ -86,6 +86,7 @@ export default function Projects() {
             githubLink={project.githubLink}
             technologies={project.technologies}
             category={project.category}
+            reversed={index % 2 != 0}
           />
         ))}
       </div>

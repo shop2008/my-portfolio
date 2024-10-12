@@ -13,6 +13,7 @@ interface ProjectCardProps {
   githubLink: string;
   technologies: string[];
   category: string;
+  reversed?: boolean; // New prop for reversing layout
 }
 
 export default function ProjectCard({
@@ -24,13 +25,16 @@ export default function ProjectCard({
   githubLink,
   technologies,
   category,
+  reversed = false, // Default to false
 }: ProjectCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="flex flex-col md:flex-row justify-between items-center relative py-10 px-4 md:px-0"
+      className={`flex flex-col ${
+        reversed ? "md:flex-row-reverse" : "md:flex-row"
+      } justify-between items-center relative py-10 px-4 md:px-0`}
     >
       <div className="relative w-full md:w-1/2 aspect-video md:aspect-auto md:h-96 mb-8 md:mb-0">
         <motion.div
@@ -52,7 +56,9 @@ export default function ProjectCard({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: 0.1 }}
             whileHover={{ y: -10 }}
-            className="absolute -bottom-16 -left-8 md:-left-16 w-32 md:w-40 h-64 md:h-80"
+            className={`absolute -bottom-16 ${
+              reversed ? "md:-right-16 -right-8" : "md:-left-16 -left-8"
+            } w-32 md:w-40 h-64 md:h-80`}
           >
             <svg
               className="w-full h-full"
@@ -100,10 +106,22 @@ export default function ProjectCard({
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="w-full md:w-7/12 flex flex-col justify-between md:absolute md:right-0 md:bottom-0"
+        className={`w-full md:w-7/12 flex flex-col justify-between ${
+          reversed ? "md:left-0" : "md:right-0"
+        } md:absolute md:bottom-0`}
       >
-        <h3 className="text-primary text-sm text-right">{category}</h3>
-        <h3 className="text-xl md:text-2xl font-semibold text-white mt-2 text-right">
+        <h3
+          className={`text-primary text-sm ${
+            reversed ? "text-left" : "text-right"
+          }`}
+        >
+          {category}
+        </h3>
+        <h3
+          className={`text-xl md:text-2xl font-semibold text-white mt-2 ${
+            reversed ? "text-left" : "text-right"
+          }`}
+        >
           {title}
         </h3>
         <motion.p
@@ -115,7 +133,11 @@ export default function ProjectCard({
         >
           {description}
         </motion.p>
-        <div className="flex flex-wrap gap-2 my-4 justify-start md:justify-end">
+        <div
+          className={`flex flex-wrap gap-2 my-4 justify-start ${
+            reversed ? "md:justify-start" : "md:justify-end"
+          }`}
+        >
           {technologies.map((tech, index) => (
             <motion.span
               key={index}
@@ -126,7 +148,9 @@ export default function ProjectCard({
             </motion.span>
           ))}
         </div>
-        <div className="flex gap-4 justify-end">
+        <div
+          className={`flex gap-4 ${reversed ? "justify-start" : "justify-end"}`}
+        >
           <motion.a
             whileHover={{ scale: 1.2 }}
             href={githubLink}
