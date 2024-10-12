@@ -12,7 +12,7 @@ export default function Contact() {
           <li>
             <a
               href="mailto:gigiwangjob@gmail.com"
-              className="text-secondary hover:text-primary transition-colors"
+              className="text-primary hover:text-secondary transition-colors"
               aria-label="Email Gigi Wang"
             >
               <FaEnvelope size={24} aria-hidden="true" />
@@ -23,7 +23,7 @@ export default function Contact() {
               href="https://www.linkedin.com/in/gigi-wang-tech/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-secondary hover:text-primary transition-colors"
+              className="text-primary hover:text-secondary transition-colors"
               aria-label="Gigi Wang's LinkedIn profile"
             >
               <FaLinkedin size={24} aria-hidden="true" />
@@ -34,7 +34,7 @@ export default function Contact() {
               href="https://github.com/shop2008"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-secondary hover:text-primary transition-colors"
+              className="text-primary hover:text-secondary transition-colors"
               aria-label="Gigi Wang's GitHub profile"
             >
               <FaGithub size={24} aria-hidden="true" />

@@ -14,35 +14,42 @@ export default function Navigation() {
   const [mounted, setMounted] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to manage menu visibility
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     setMounted(true);
 
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // Adjust breakpoint as needed
+    };
+
     const controlNavbar = () => {
       if (typeof window !== "undefined") {
-        if (window.scrollY > lastScrollY) {
-          // if scroll down hide the navbar
-          setIsVisible(false);
+        if (!isMobile) {
+          if (window.scrollY > lastScrollY) {
+            setIsVisible(false);
+          } else {
+            setIsVisible(true);
+          }
         } else {
-          // if scroll up show the navbar
-          setIsVisible(true);
+          setIsVisible(true); // Always visible on mobile
         }
-
-        // remember current page location to use in the next move
         setLastScrollY(window.scrollY);
       }
     };
 
     if (typeof window !== "undefined") {
+      handleResize(); // Initial check
       window.addEventListener("scroll", controlNavbar);
+      window.addEventListener("resize", handleResize);
 
-      // cleanup function
       return () => {
         window.removeEventListener("scroll", controlNavbar);
+        window.removeEventListener("resize", handleResize);
       };
     }
-  }, [lastScrollY]);
+  }, [lastScrollY, isMobile]);
 
   if (!mounted) return null;
 
