@@ -106,3 +106,79 @@ body {
 .glow-effect {
   animation: glow 3s infinite alternate;
 }
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.typing-indicator {
+  display: inline-block;
+  width: 20px;
+  height: 10px;
+  position: relative;
+  animation: blink 1s infinite;
+}
+
+.typing-indicator::before,
+.typing-indicator::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #888;
+}
+
+.typing-indicator::before {
+  left: 0;
+  animation: dotLeft 1s infinite;
+}
+
+.typing-indicator::after {
+  right: 0;
+  animation: dotRight 1s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes dotLeft {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+}
+
+@keyframes dotRight {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-4px);
+  }
+}

@@ -78,21 +78,29 @@ export default function Navigation() {
             id="main-menu"
             className={`flex-col md:flex-row md:flex absolute md:static bg-background/90 md:bg-transparent w-full md:w-auto left-0 top-16 md:top-0 transition-all duration-300 ${
               isMenuOpen ? "flex flex-col items-center py-4" : "hidden"
-            } md:space-y-0 md:space-x-5`}
+            } md:space-y-0 md:space-x-2`}
             role="menu"
           >
             {["About", "Experience", "Projects", "Skills", "Contact"].map(
               (item) => (
-                <li key={item} className="text-center md:text-left" role="none">
+                <li
+                  key={item}
+                  className="w-full md:w-auto text-center"
+                  role="none"
+                >
                   <button
                     onClick={() => {
                       scrollToSection(item.toLowerCase());
                       setIsMenuOpen(false);
                     }}
-                    className="block py-2 md:py-0 cursor-pointer text-text hover:text-primary transition-colors"
+                    className={`w-auto md:w-auto py-2 px-4 my-1 md:my-0 cursor-pointer transition-all duration-300 rounded-full ${
+                      item === "Contact"
+                        ? "text-background bg-primary hover:bg-secondary shadow-md hover:shadow-lg"
+                        : "text-text hover:text-primary"
+                    }`}
                     role="menuitem"
                   >
-                    {item}
+                    <span className="font-medium">{item}</span>
                   </button>
                 </li>
               )

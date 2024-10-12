@@ -70,7 +70,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="py-0">
       <h2 className="text-heading-2 font-semibold mb-6 text-primary">
         Projects
       </h2>

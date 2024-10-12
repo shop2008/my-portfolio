@@ -20,7 +20,7 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" className="max-w-4xl mx-auto px-4 py-10">
+    <section id="skills" className="max-w-4xl mx-auto px-4 py-0">
       <h2 className="text-heading-2 font-semibold mb-6 text-primary">Skills</h2>
       <div className="flex flex-wrap gap-4">
         {skills.map((skill) => (

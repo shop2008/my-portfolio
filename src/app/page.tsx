@@ -7,6 +7,7 @@ import Experience from "../components/Experience";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
 import ChatbotButton from "../components/ChatbotButton";
+import FloatingContact from "../components/FloatingContact";
 
 const Skills = dynamic(() => import("../components/Skills"), { ssr: false });
 
@@ -23,6 +24,7 @@ export default function Home() {
       </div>
       <Contact />
       <ChatbotButton />
+      <FloatingContact />
     </main>
   );
 }
