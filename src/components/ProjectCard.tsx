@@ -28,17 +28,15 @@ export default function ProjectCard({
   reversed = false, // Default to false
 }: ProjectCardProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+    <div
+      data-aos="fade-up"
       className={`flex flex-col ${
         reversed ? "md:flex-row-reverse" : "md:flex-row"
       } justify-between items-center relative py-10 px-4 md:px-0`}
     >
       <div className="relative w-full md:w-1/2 aspect-video md:aspect-auto md:h-96 mb-8 md:mb-0">
         <motion.div
-          transition={{ duration: 0.3, delay: 0.1 }}
+          data-aos="fade-up"
           whileHover={{ y: -10 }}
           className="relative w-full h-full"
         >
@@ -52,9 +50,7 @@ export default function ProjectCard({
         </motion.div>
         {phoneImage && (
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 0.1 }}
+            data-aos="fade-up"
             whileHover={{ y: -10 }}
             className={`absolute -bottom-16 ${
               reversed ? "md:-right-16 -right-8" : "md:-left-16 -left-8"
@@ -83,12 +79,7 @@ export default function ProjectCard({
                 fill="#F2F2F2"
               />
             </svg>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.3, delay: 0.2 }}
-              className="absolute inset-2 rounded-[16px] overflow-hidden"
-            >
+            <div className="absolute inset-2 rounded-[16px] overflow-hidden">
               <Image
                 src={phoneImage}
                 alt={`${title} - Phone View`}
@@ -98,14 +89,12 @@ export default function ProjectCard({
                   objectPosition: "top",
                 }}
               />
-            </motion.div>
+            </div>
           </motion.div>
         )}
       </div>
-      <motion.div
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
+      <div
+        data-aos={`fade-${reversed ? "right" : "left"}`}
         className={`w-full md:w-7/12 flex flex-col justify-between ${
           reversed ? "md:left-0" : "md:right-0"
         } md:absolute md:bottom-0`}
@@ -170,7 +159,7 @@ export default function ProjectCard({
             <FaExternalLinkAlt size={20} />
           </motion.a>
         </div>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 }

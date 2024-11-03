@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronDown } from "react-icons/fa";
 
 const workExperiences = [
@@ -54,25 +53,20 @@ export default function Experience() {
 
   return (
     <section id="experience" className="max-w-4xl mx-auto px-4">
-      <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+      <h2
         className="text-heading-2 font-semibold mb-12 text-primary text-center"
+        data-aos="fade-up"
       >
         Work Experience
-      </motion.h2>
+      </h2>
       <div className="flex flex-col md:flex-row">
-        <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+        <div
           className="md:w-1/4 border-r border-gray-300 pr-4"
+          data-aos="fade-right"
         >
           {workExperiences.map((experience, index) => (
-            <motion.div
+            <div
               key={index}
-              whileHover={{ scale: 1.05 }}
               className={`mb-4 text-right cursor-pointer ${
                 selectedExperience.company === experience.company
                   ? "text-primary"
@@ -83,58 +77,50 @@ export default function Experience() {
               <h3 className="font-semibold">
                 {experience.company.split(",")[0]}
               </h3>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="md:w-3/4 pl-8"
-        >
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={selectedExperience.company}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
+        </div>
+        <div className="md:w-3/4 pl-8" data-aos="fade-left">
+          <div
+            key={selectedExperience.company}
+            className="opacity-0 transition-opacity duration-300"
+            style={{ opacity: 1 }}
+          >
+            <h3 className="text-xl font-bold text-primary">
+              {selectedExperience.title} @{" "}
+              {selectedExperience.company.split(",")[1]}
+            </h3>
+            <p className="text-gray-500 mb-4">{selectedExperience.period}</p>
+            <div
+              className="overflow-hidden"
+              style={{ height: expandedDescription ? "auto" : "100px" }}
             >
-              <h3 className="text-xl font-bold text-primary">
-                {selectedExperience.title} @{" "}
-                {selectedExperience.company.split(",")[1]}
-              </h3>
-              <p className="text-gray-500 mb-4">{selectedExperience.period}</p>
-              <motion.div
-                initial={false}
-                animate={{ height: expandedDescription ? "auto" : "100px" }}
-                className="overflow-hidden"
+              <ul className="list-disc pl-5 space-y-2">
+                {selectedExperience.description.map((item, idx) => (
+                  <li key={idx}>{item}</li>
+                ))}
+              </ul>
+            </div>
+            {selectedExperience.description.length > 1 && (
+              <button
+                onClick={() => setExpandedDescription(!expandedDescription)}
+                className="mt-4 text-primary flex items-center"
               >
-                <ul className="list-disc pl-5 space-y-2">
-                  {selectedExperience.description.map((item, idx) => (
-                    <li key={idx}>{item}</li>
-                  ))}
-                </ul>
-              </motion.div>
-              {selectedExperience.description.length > 1 && (
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={() => setExpandedDescription(!expandedDescription)}
-                  className="mt-4 text-primary flex items-center"
+                {expandedDescription ? "Show Less" : "Show More"}
+                <div
+                  style={{
+                    transform: expandedDescription
+                      ? "rotate(180deg)"
+                      : "rotate(0deg)",
+                  }}
+                  className="transition-transform duration-300"
                 >
-                  {expandedDescription ? "Show Less" : "Show More"}
-                  <motion.div
-                    animate={{ rotate: expandedDescription ? 180 : 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <FaChevronDown className="ml-2" />
-                  </motion.div>
-                </motion.button>
-              )}
-            </motion.div>
-          </AnimatePresence>
-        </motion.div>
+                  <FaChevronDown className="ml-2" />
+                </div>
+              </button>
+            )}
+          </div>
+        </div>
       </div>
     </section>
   );

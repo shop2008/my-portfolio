@@ -49,18 +49,14 @@ export default function Contact() {
   return (
     <footer id="contact" className="py-16">
       <div className="max-w-4xl mx-auto px-4">
-        <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+        <h2
+          data-aos="fade-up"
           className="text-heading-2 font-semibold mb-8 text-primary text-center"
         >
           Get in Touch
-        </motion.h2>
-        <motion.form
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+        </h2>
+        <form
+          data-aos="fade-up"
           onSubmit={handleSubmit}
           className="mb-8 space-y-4"
         >
@@ -102,11 +98,9 @@ export default function Contact() {
             ) : null}
             {isLoading ? "Sending..." : status ? status : "Send Message"}
           </motion.button>
-        </motion.form>
-        <motion.ul
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+        </form>
+        <ul
+          data-aos="fade-up"
           className="flex justify-center space-x-8 list-none p-0"
         >
           <motion.li whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.9 }}>
@@ -140,7 +134,7 @@ export default function Contact() {
               <FaGithub size={28} aria-hidden="true" />
             </a>
           </motion.li>
-        </motion.ul>
+        </ul>
       </div>
     </footer>
   );

@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
@@ -10,37 +9,26 @@ export default function Hero() {
       aria-labelledby="hero-heading"
     >
       <div className="max-w-4xl mx-auto text-center">
-        <motion.h1
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+        <h1
+          data-aos="fade-down"
           className="text-heading-1 mb-6 text-primary"
           id="hero-heading"
         >
           Hi, I&apos;m Gigi Wang
-        </motion.h1>
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-8"
-        >
+        </h1>
+        <div data-aos="fade-up" className="mb-8">
           <p className="text-heading-3 font-semibold text-secondary">
             Web Developer | Mobile Developer | Fullstack Developer
           </p>
-        </motion.div>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+        </div>
+        <p
+          data-aos="fade-up"
           className="text-body-large text-text max-w-2xl mx-auto mb-12"
         >
           Crafting innovative digital solutions with cutting-edge technologies
-        </motion.p>
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+        </p>
+        <div
+          data-aos="fade-up"
           className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6"
         >
           <a
@@ -57,7 +45,7 @@ export default function Hero() {
           >
             Get in Touch
           </a>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
