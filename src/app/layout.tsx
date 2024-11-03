@@ -3,6 +3,7 @@ import { Orbitron, Space_Mono } from "next/font/google";
 import "./globals.css";
 import StructuredData from "../components/StructuredData";
 import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 
 const orbitron = Orbitron({
   subsets: ["latin"],
@@ -59,6 +60,20 @@ export default function RootLayout({
     <html lang="en" className={`${orbitron.variable} ${spaceMono.variable}`}>
       <head>
         <StructuredData />
+        {/* Google tag (gtag.js) */}
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-8LZ9MEJ5LV"
+        />
+        <Script id="google-analytics-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-8LZ9MEJ5LV');
+          `}
+        </Script>
       </head>
       <body className="font-mono">
         {children}
