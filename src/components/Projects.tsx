@@ -55,17 +55,17 @@ const projects = [
     technologies: ["Flutter", "Cupertino", "Firebase"],
     category: "Mobile Application",
   },
-  {
-    title: "DaoDao",
-    description:
-      "An Android native instant messaging app with real-time voice calls, featuring secure communication and a user-friendly interface.",
-    image: "/daodao.jpg",
-    phoneImage: "/daodao-phone.jpg",
-    link: "https://github.com/shop2008/#",
-    githubLink: "https://github.com/shop2008/#",
-    technologies: ["Android", "Kotlin", "Agora", "Singnal"],
-    category: "Mobile Application",
-  },
+  // {
+  //   title: "DaoDao",
+  //   description:
+  //     "An Android native instant messaging app with real-time voice calls, featuring secure communication and a user-friendly interface.",
+  //   image: "/daodao.jpg",
+  //   phoneImage: "/daodao-phone.jpg",
+  //   link: "https://github.com/shop2008/#",
+  //   githubLink: "https://github.com/shop2008/#",
+  //   technologies: ["Android", "Kotlin", "Agora", "Singnal"],
+  //   category: "Mobile Application",
+  // },
 ];
 
 export default function Projects() {
