@@ -20,27 +20,33 @@ const spaceMono = Space_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.gigitech.me"),
-  title: "GiGiTech - Full Stack & Mobile Developer Portfolio | Gigi Wang",
+  title: "GiGiTech | Gigi Wang - Full Stack Developer Portfolio",
+  alternates: {
+    canonical: "https://www.gigitech.me",
+  },
   icons: {
     icon: "/logo.svg",
   },
   description:
-    "Explore Gigi Wang's portfolio showcasing expertise in full stack, mobile, and web development. View projects, skills, and experience.",
+    "Explore Gigi Wang's portfolio, a Full Stack Developer specializing in web and mobile development. Find Gigi's latest projects and technical expertise.",
   keywords:
-    "GiGiTech, Full Stack Developer, Mobile Developer, Web Developer, React, Next.js, Flutter, Android, iOS",
+    "GiGiTech, Gigi Wang, Gigi Developer, GigiWang, GigiWang Developer, Full Stack Developer, Mobile Developer, Web Developer, React, Next.js, Flutter, Android, iOS",
   authors: [{ name: "Gigi Wang", url: "https://www.gigitech.me" }],
+  creator: "Gigi Wang",
   openGraph: {
-    title: "GiGiTech - Full Stack & Mobile Developer Portfolio | Gigi Wang",
+    title: "GigiTech | Gigi Wang - Full Stack Developer Portfolio",
     description:
-      "Explore Gigi Wang's portfolio showcasing expertise in full stack, mobile, and web development. View projects, skills, and experience.",
+      "GiGiTech is the professional portfolio of Gigi Wang, a Full Stack Developer specializing in web and mobile development. Find Gigi's latest projects and technical expertise.",
     type: "website",
     url: "https://www.gigitech.me",
+    siteName: "GiGiTech",
+    locale: "en_US",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "GiGiTech Portfolio",
+        alt: "GiGiTech - Gigi Wang's Developer Portfolio",
       },
     ],
   },
@@ -48,6 +54,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@gigitech",
     creator: "@gigitech",
+    title: "GigiTech | Gigi Wang - Full Stack Developer",
+    description:
+      "Full Stack Developer specializing in web and mobile development",
   },
 };
 
