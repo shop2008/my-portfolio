@@ -3,6 +3,28 @@ import ProjectCard from "./ProjectCard";
 
 const projects = [
   {
+    title: "Winsun Group",
+    description: (
+      <>
+        A dynamic business website with integrated CMS for Winsun Group. Built
+        with <span className="text-primary">Next.js</span> and{" "}
+        <span className="text-primary">Sanity.io</span>, enabling content
+        editors to manage website content through an intuitive studio interface.
+        Features include real-time preview, structured content modeling.
+        Implemented <span className="text-primary">TypeScript</span> for robust
+        type safety and <span className="text-primary">Tailwind CSS</span> for
+        responsive design. The system supports media management and seamless
+        content updates without developer intervention.
+      </>
+    ),
+    image: "/winsun.jpg",
+    phoneImage: "",
+    link: "https://www.winsungroup.ca/",
+    githubLink: "",
+    technologies: ["Next.js", "Sanity.io", "TypeScript", "Tailwind CSS"],
+    category: "Web Application",
+  },
+  {
     title: "Movie Maestro",
     description: (
       <>
