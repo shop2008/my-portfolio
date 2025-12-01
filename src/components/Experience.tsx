@@ -6,7 +6,7 @@ const workExperiences = [
   {
     title: 'Software Developer',
     company: 'Payworks, Winnipeg Canada',
-    period: 'June 2024 - Present',
+    period: 'June 2025 - Present',
     description: [
       'Developing proprietary SaaS-based workforce management solutions for payroll, human resources, and time and attendance systems.',
       'Collaborating with Agile development teams to implement coding solutions, participate in code reviews, and contribute to squad-based development processes.',
